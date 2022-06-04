@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+
+:root {
+  --bar-color: rgb(77, 73, 73);
+  --back-color: rgba(92, 89, 89, 0.7);
+  --selected-section: #faf3f3;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container-general {
+  height: 100vh;
+  display: flex;
+}
+
+.option-bar {
+  width: 90px;
+  background-color: var(--bar-color);
+  display: flex;
+  flex-direction: column;
+ 
+  justify-content: space-evenly;
+}
+
+.aplication {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.item-area {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 0.5px solid rgb(131, 130, 130);
+  /* border: 1px solid rgb(131, 130, 130); */
+}
+
+.item-area.cronometro, .item-area.config {
+  border-bottom: 0.5px solid rgb(131, 130, 130);
+}
+
+.container-img {
+  width: 30px;
+  height: 30px;
+  margin: 20px 0;
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+  filter: invert(100%);
+}
+
+
+.main-section {
+  width: calc(100vw - 90px);
+  background-image: url(/assets/img/subtle-prism-dark.svg);
+  position: relative;
+}
+
+.titulo {
+  margin: 2em auto auto 15em;
+  display: inline;
+  position: absolute;
+  background-color: var(--back-color);
+  color: #f8f8f8;
+}
+
+.titulo h1 {
+  padding: 10px;   
+}
+
+
+.main-section-container {
+  margin: 12.5% auto 37.5% auto;
+  height: 40%;
+  width: 50%;
+  background-color: var(--back-color);
+  color: #f8f8f8;
+  border-radius: 10px;
+}
+
+main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.data-container {
+  height: 30%;
+  margin: 15px 0 0 10px;
+}
+
+.hora-container {
+  height: 70%;
+}
+
+
+.dataAtual {
+  font-size: 24px;
+  padding: 15px;
+  
+}
+
+.horaAtual {
+  font-size: 70px;
+  text-align: center;
+}
