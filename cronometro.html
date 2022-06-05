@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relógio</title>
+    <title>Cronômetro</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
@@ -18,15 +18,16 @@
 
                 <div class="item-area">
                     <div class="relogio container-img">
-                        <img class="icon" src="./assets/img/relogio.svg" alt="relogio">
+                        <a href="./index.html">
+                            <img class="icon" src="./assets/img/relogio.svg" alt="relogio">
+                        </a>
+                        
                     </div>
                 </div>
 
                 <div class="item-area cronometro">
                     <div class="cronometro container-img">
-                        <a href="./cronometro.html">
-                            <img class="icon" src="./assets/img/cronometro.svg" alt="cronometro">
-                        </a>
+                        <img class="icon" src="./assets/img/cronometro.svg" alt="cronometro">
                     </div>
                 </div>
 
@@ -52,13 +53,17 @@
 
         <section class="main-section">
             <div class="titulo">
-                <h1>Relógio</h1>
+                <h1>Cronômetro</h1>
             </div>
             <div class="main-section-container">
                 
-                <main>
-                    <div class="data-container"></div>
-                    <div class="relogio-container"></div>
+                <main class="main-container">
+                    <div class="cronometro-container"></div>
+                    <div class="btn-container">
+                        <button class="iniciar">Iniciar</button>
+                        <button class="pausar">Pausar</button>
+                        <button class="reiniciar">Reiniciar</button>
+                    </div>
                 </main>
 
             </div>
@@ -66,7 +71,7 @@
         </section>
     
     </div>
-
+    <script src="./assets/js/cronometro.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
 

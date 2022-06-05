@@ -1,15 +1,12 @@
 class Relogio {
-
     colocarNaTela() {
         const data = new Date();
         this.formatarData(data);
-        this.formatarHora(data);
-
+        this.formatarHora();
     }
 
     formatarData(data) {
         const dataExata = data.toLocaleDateString('pt-br', {dateStyle: 'full'});
-        
         const dataPlace = document.querySelector('.data-container');
         const p = document.createElement('p');
         p.innerHTML = dataExata;
@@ -17,32 +14,22 @@ class Relogio {
         p.classList.add('dataAtual');
     }
     
-    formatarHora(hora) {
-        const horaExata = hora.toLocaleTimeString('pt-br',{timeStyle: 'medium'});
- 
+    formatarHora() {
         const relogioPlace = document.querySelector('.relogio-container');
         const p = document.createElement('p');
-        p.innerHTML = horaExata;
-        relogioPlace.appendChild(p);
         p.classList.add('horaAtual');
-        // setInterval(()=> {
-        //     hora.getSeconds()
-            
-            
-        // }, 1000)
+        relogioPlace.appendChild(p);
         
-        
-    }
+        setInterval(()=> {
+            let hora = new Date();
+            p.innerHTML= hora.toLocaleTimeString('pt-br',{timeStyle: 'medium'});
+            
+        }, 1000)
+    }        
     
-    
-    relogioOn() {
-        this.colocarNaTela();
-
-    }
-
 }
 
 const relogio = new Relogio();
-relogio.relogioOn();
+relogio.colocarNaTela();
 
 
