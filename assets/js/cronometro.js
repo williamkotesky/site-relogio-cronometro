@@ -1,19 +1,37 @@
 class Cronometro {
+    constructor () {
+        this.segundos =0;
+        this.timer;
+        this.cronometroLocal = document.querySelector('.cronometro-display');
+    }
 
     controle() {
-        const cronometro = this.criarDisplay();
-        this.colocarNaTela(cronometro);
+        
+        const cronometro = this.criarDisplay(this.segundos);
+        this.cronometroLocal.innerText = cronometro;
+        let segundosAtt = this.transporteSegundos();
 
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', (e) => {
             const element = e.target;
-            if(element.classList.contains('iniciar')) {
-                iniciar()
+            
+            if(element.classList.contains('btn-iniciar')) {
+                clearInterval(this.timer);
+                
+                this.iniciar(this.segundos);
+                this.segundos = segundosAtt;
+                console.log(this.segundos)
+                
+            }
+
+            if(element.classList.contains('btn-pausar')) {
+                this.pausar();
+                
             }
         })
     }
 
-    criarDisplay() {
-        const tempo = new Date(0);
+    criarDisplay(segundos) {
+        let tempo = new Date(segundos*1000);
         const cronometro = tempo.toLocaleTimeString('pt-br', {
             timeStyle: 'medium', 
             timeZone: 'UTC',
@@ -22,19 +40,22 @@ class Cronometro {
         return cronometro;
     }
 
-    colocarNaTela(cronometro) {
-        const cronometroPlace = document.querySelector('.cronometro-container');
-        const p = document.createElement('p');
-        p.innerHTML = cronometro;
-        cronometroPlace.appendChild(p);
-        p.classList.add('cronometro-display');
+    iniciar(segundos) {
+        this.timer = setInterval(() => {
+            segundos++
+            this.cronometroLocal.innerHTML = this.criarDisplay(segundos);
+            this.transporteSegundos(segundos)
 
-    }
+        }, 1000)
 
-    iniciar() {
         
     }
 
+    transporteSegundos(segundos) {segundos}
+
+    pausar() {
+        clearInterval(this.timer);
+    }
 
 
 }
